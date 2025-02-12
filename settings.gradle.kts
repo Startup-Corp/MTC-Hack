@@ -23,6 +23,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "MTC-Hack"
 include(":app")
+include(":core")
+include(":design-system")
 include(":features")
+
 include(":features:audio")
 include(":features:chat")
