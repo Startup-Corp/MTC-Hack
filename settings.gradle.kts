@@ -1,3 +1,5 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google {
@@ -21,3 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MTC-Hack"
 include(":app")
+include(":features")
+include(":features:audio")
+include(":features:chat")

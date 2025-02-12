@@ -1,26 +1,21 @@
 plugins {
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.library)
 }
 
 android {
-    namespace = "com.mtc_hack"
+    namespace = "com.mtc_hack.audio"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.mtc_hack"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -37,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
