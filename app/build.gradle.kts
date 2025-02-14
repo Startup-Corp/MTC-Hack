@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.features.audio)
     implementation(projects.features.chat)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
