@@ -1,0 +1,7 @@
+<resources>
+    <string name="sender_base_name">Anonymous</string>
+    <string name="message_base_text">Message</string>
+
+    <string name="text_input_hint">Type a message</string>
+    <string name="send_button_text">Send</string>
+</resources>
