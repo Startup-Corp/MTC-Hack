@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_required_title">Требуется разрешение</string>
+    <string name="permission_required_message">Для записи голоса нужно разрешение на доступ к микрофону. Пожалуйста, предоставьте его</string>
+    <string name="permission_denied_title">Разрешение отклонено</string>
+    <string name="permission_denied_message">Вы отклонили разрешение на доступ к микрофону. Вы можете включить его в настройках приложения</string>
+    <string name="ok">ОК</string>
+    <string name="cancel">Отмена</string>
+    <string name="settings">Настройки</string>
+</resources>

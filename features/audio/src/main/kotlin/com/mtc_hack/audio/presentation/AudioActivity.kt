@@ -2,11 +2,15 @@ package com.mtc_hack.audio.presentation
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.mtc_hack.audio.PermissionManager
 import com.mtc_hack.audio.data.AudioPlayerImpl
 import com.mtc_hack.audio.data.AudioRecorderImpl
 import com.mtc_hack.audio.databinding.ActivityAudioBinding
+import com.mtc_hack.design_system.PermissionRationaleDialog
+import com.mtc_hack.design_system.PermissionSettingsDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -25,6 +29,7 @@ class AudioActivity : AppCompatActivity() {
     private val recorder by lazy { AudioRecorderImpl(applicationContext) }
     private val player by lazy { AudioPlayerImpl(applicationContext) }
     private var audioFile: File? = null
+    private lateinit var permissionManager: PermissionManager
     private val job = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + job)
 
@@ -33,10 +38,8 @@ class AudioActivity : AppCompatActivity() {
         binding = ActivityAudioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ActivityCompat.requestPermissions(
-            this, arrayOf(android.Manifest.permission.RECORD_AUDIO), 0
-        )
-        setOnClickListeners()
+        setOnClickListenersBeforePermission()
+        initPermissionManager()
     }
 
     private suspend fun uploadFileToServer(file: File) = withContext(Dispatchers.IO) {
@@ -56,6 +59,20 @@ class AudioActivity : AppCompatActivity() {
                 Log.e("AudioActivity", "Failed to upload file: ${response.message}")
             }
         }
+    }
+
+    private fun initPermissionManager() {
+        permissionManager = PermissionManager(onPermissionGranted = { setOnClickListeners() },
+            onShowRationaleDialog = { showPermissionRationaleDialog() },
+            onShowSettingsDialog = { showSettingsDialog() },
+            this
+        )
+        permissionManager.initialize(this)
+        permissionManager.checkAndRequestLocationPermission()
+    }
+
+    private fun showPermissionDeniedMessage() {
+        Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
     }
 
     private fun setOnClickListeners() {
@@ -85,6 +102,41 @@ class AudioActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setOnClickListenersBeforePermission() {
+        binding.startRecordingButton.setOnClickListener {
+            permissionManager.requestPermission()
+        }
+
+        binding.stopRecordingButton.setOnClickListener {
+            permissionManager.requestPermission()
+        }
+
+        binding.playButton.setOnClickListener {
+            permissionManager.requestPermission()
+        }
+
+        binding.stopPlayingButton.setOnClickListener {
+            permissionManager.requestPermission()
+        }
+
+        binding.uploadButton.setOnClickListener {
+            permissionManager.requestPermission()
+        }
+    }
+
+    private fun showPermissionRationaleDialog() {
+        PermissionRationaleDialog(onPositiveAction = { permissionManager.requestPermission() },
+            onNegativeAction = { showPermissionDeniedMessage() }).show(
+            supportFragmentManager, PermissionRationaleDialog.TAG
+        )
+    }
+
+    private fun showSettingsDialog() {
+        PermissionSettingsDialog(onNegativeAction = { showPermissionDeniedMessage() }).show(
+            supportFragmentManager, PermissionSettingsDialog.TAG
+        )
     }
 
     override fun onDestroy() {
