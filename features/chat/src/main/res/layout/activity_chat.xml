@@ -3,32 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.mtcapp.chat.presentation.ChatActivity"
-    android:background="@color/white">
+    tools:context=".presentation.ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:itemCount="10"
         android:layout_weight="1"
-        tools:listitem="@layout/chat_layout"/>
+        tools:itemCount="10"
+        tools:listitem="@layout/chat_layout" />
 
     <LinearLayout
-        android:layout_marginHorizontal="10dp"
-        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
 
         <EditText
             android:id="@+id/editTextMessage"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:inputType="text"
-            android:hint="@string/text_input_hint" />
+            android:hint="@string/text_input_hint"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/buttonSend"

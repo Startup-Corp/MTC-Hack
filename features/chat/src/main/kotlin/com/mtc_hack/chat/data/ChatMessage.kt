@@ -1,4 +1,4 @@
-package com.mtcapp.chat.data
+package com.mtc_hack.chat.data
 
 data class ChatMessage(
     val id: String = "",

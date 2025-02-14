@@ -21,7 +21,7 @@
             android:name=".audio.presentation.AudioActivity"
             android:exported="true">
         </activity>
-        <activity android:name="com.mtcapp.chat.presentation.ChatActivity"
+        <activity android:name=".chat.presentation.ChatActivity"
             android:screenOrientation="portrait"
             android:exported="true"
             tools:ignore="LockedOrientationActivity">
