@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_blue">#09B3F4</color>
+    <color name="white">#F4F4F4</color>
+    <color name="dark_blue">#00008B</color>
+    <color name="blue">#00B0FF</color>
+    <color name="red">#CA2222</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="pressed_color">#ABABAB</color>
+    <color name="splash_background_color">#09B3F4</color>
+    <color name="start_gray_blue_gradient_background_color">#CECECE</color>
+    <color name="end_gray_blue_gradient_background_color">#A7E4FF</color>
+</resources>
