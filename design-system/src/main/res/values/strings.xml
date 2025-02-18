@@ -7,4 +7,12 @@
     <string name="ok">ОК</string>
     <string name="cancel">Отмена</string>
     <string name="settings">Настройки</string>
+
+    <string name="floors_list_street">Нижне-Волжская наб., 11, Нижний Новгород</string>
+    <string name="floors_list_title">Выберите этаж</string>
+
+    <string name="base_title_text">Title</string>
+    <string name="base_description_text">Description</string>
+    <string name="floor_item_base_text">Этаж</string>
+    <string name="request_added_text">Заявка в службу поддержки сформирована</string>
 </resources>

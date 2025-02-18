@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_horizontal_margin">30dp</dimen>
+    <dimen name="description_horizontal_margin">30dp</dimen>
+    <dimen name="description_image_horizontal_margin">50dp</dimen>
+    <dimen name="title_top_margin">10dp</dimen>
+    <dimen name="description_top_margin">5dp</dimen>
+    <dimen name="base_horizontal_margin">30dp</dimen>
+    <dimen name="base_vertical_margin">20dp</dimen>
+    <dimen name="title_size">20sp</dimen>
+    <dimen name="base_title_size">18sp</dimen>
+    <dimen name="base_description_size">15sp</dimen>
+    <dimen name="linear_buttons_margin">5dp</dimen>
+    <dimen name="street_size">13sp</dimen>
+</resources>
