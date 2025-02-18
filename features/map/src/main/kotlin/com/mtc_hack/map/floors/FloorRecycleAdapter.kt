@@ -25,12 +25,12 @@ class FloorRecycleAdapter(private val floors: List<Int>, private val context: Co
     override fun onBindViewHolder(holder: FloorsViewHolder, position: Int) {
         holder.binding.floorTextView.text = "Этаж ${floors[position]}"
         if (floors[position] != 3) {
-            if (floors[position] == 1)
-                holder.binding.floorTextView
-                    .setBackgroundResource(com.mtc_hack.design_system.R.color.green)
-            else if (floors[position] == 2)
-                holder.binding.floorTextView
-                    .setBackgroundResource(com.mtc_hack.design_system.R.color.red)
+//            if (floors[position] == 1)
+//                holder.binding.floorTextView
+//                    .setBackgroundResource(com.mtc_hack.design_system.R.color.green)
+//            else if (floors[position] == 2)
+//                holder.binding.floorTextView
+//                    .setBackgroundResource(com.mtc_hack.design_system.R.color.red)
 
             holder.binding.floorTextView.setOnClickListener {
                 val context: Context = holder.itemView.context
