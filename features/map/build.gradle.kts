@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mtc_hack.design_system"
+    namespace = "com.mtc_hack.map"
     compileSdk = 35
 
     defaultConfig {
@@ -32,6 +32,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.fragment.ktx)
+    implementation(projects.designSystem)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 }

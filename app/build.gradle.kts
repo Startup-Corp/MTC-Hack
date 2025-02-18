@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.features.chat)
+    implementation(projects.features.map)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)

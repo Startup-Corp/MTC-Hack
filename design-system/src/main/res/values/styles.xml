@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="baseButton" parent="Widget.Material3.Button">
+<!--        <item name="cornerRadius">10dp</item>-->
+        <item name="background">@drawable/floor_stroke</item>
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:layout_width">0dp</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_weight">1</item>-->
+<!--        <item name="android:text">@string/floor_item_base_text</item>-->
+<!--        <item name="android:titleMarginBottom">2dp</item>-->
+    </style>
+</resources>
